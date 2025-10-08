@@ -1,2 +1,1 @@
-﻿Program6.Run();
-
+﻿Program10.Run();
