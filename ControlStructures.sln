@@ -9,8 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Functions", "Functions\Func
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntegratedProj", "IntegratedProj\IntegratedProj.csproj", "{A72D5D56-E36B-45A3-B97B-67E36EDF338F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MSProj1", "MSProj1\MSProj1.csproj", "{D7075CC2-7279-47D1-8F77-FDFDAD03B674}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InvMgmtSystem", "InvMgmtSystem\InvMgmtSystem.csproj", "{E3D5074E-915D-40CE-A992-2500AC8E5D2D}"
 EndProject
 Global
