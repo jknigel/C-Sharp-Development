@@ -41,3 +41,5 @@ user-secrets.json
 TestResults/
 *.coverage
 *.coveragereport
+
+/Certificates/
