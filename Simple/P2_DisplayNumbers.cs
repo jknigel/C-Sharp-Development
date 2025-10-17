@@ -8,7 +8,7 @@ public class NumberDisplay
         }
     }
 
-    public static void Main()
+    public static void Run()
     {
         DisplayNumbers();
     }

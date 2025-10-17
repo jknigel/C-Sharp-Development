@@ -8,7 +8,7 @@ public class Calculator
         return num1 + num2;
     }
 
-    public static void Main()
+    public static void Run()
     {
         int number1 = 10;
         int number2 = 20;

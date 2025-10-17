@@ -1,1 +1,1 @@
-﻿UserInput.Main();
+﻿TaskApp.Run();
