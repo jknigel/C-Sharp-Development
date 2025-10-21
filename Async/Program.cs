@@ -1,32 +1,17 @@
-﻿public class Program
+﻿using System;
+using System.Threading.Tasks;
+
+class Program
 {
-    public async Task DownloadDataAsync()
-    {
-        try
-        {
-            Console.WriteLine("Starting data download...");
-            await Task.Delay(2000); // Simulate a delay for downloading data
-            throw new Exception("Network error occurred.");
-            Console.WriteLine("Data downloaded successfully.");
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine($"An error occurred: {ex.Message}");
-        }
-    }
-
-    public async Task DownloadDataAsync2()
-    {
-        Console.WriteLine("Starting second data download...");
-        await Task.Delay(3000); // Simulate a longer delay for downloading data
-        Console.WriteLine("Second data downloaded successfully.");
-    }
-
+    // This is the ONLY Main method in your entire project.
     public static async Task Main(string[] args)
     {
-        Task.WhenAll(
-            new Program().DownloadDataAsync(),
-            new Program().DownloadDataAsync2()
-        ).Wait();
+        // To run a lesson, just call its RunAsync method and await it.
+        // To switch lessons, comment one out and uncomment another.
+
+        await P3.RunAsync();
+
+        Console.WriteLine("Execution complete. Press any key to exit.");
+        Console.ReadKey();
     }
 }
