@@ -1,0 +1,123 @@
+/* Basic Reset and Font (Your code, perfectly fine) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9; /* A slightly off-white background is easier on the eyes */
+    color: #333;
+}
+
+/* A container to center content on larger screens */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Layout Styling */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Styling the navigation bar */
+nav ul {
+    list-style: none; /* Removes the bullet points */
+    display: flex;
+    justify-content: center; /* Centers the nav items */
+    gap: 2rem;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #a0d4ff; /* A nice highlight color on hover */
+}
+
+/* Your flexbox concept, now applied correctly to the container */
+main {
+    display: flex;
+    gap: 2rem; /* Adds space between content and sidebar */
+    padding: 2rem 1rem;
+    max-width: 1200px; /* Limits the width for better readability */
+    margin: 0 auto; /* Centers the main content block */
+}
+
+.content {
+    flex: 3; /* The main content takes up 3 parts of the space */
+}
+
+.sidebar {
+    flex: 1; /* The sidebar takes up 1 part */
+    background-color: #f4f4f4;
+    padding: 1.5rem;
+    border-radius: 8px; /* Softens the corners */
+    height: fit-content; /* Makes the sidebar only as tall as its content */
+}
+
+.sidebar h3 {
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 0.5rem;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: #333;
+}
+
+/* Making sections in the main content look distinct */
+.content section {
+    margin-bottom: 2rem;
+}
+
+.content h1, .content h2 {
+    margin-bottom: 1rem;
+    color: #0056b3;
+}
+
+/* Your Grid Example, now with visible items */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.project-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: #333;
+    color: #fff;
+}
+
+/* Your Media Queries (this part was already good!) */
+@media screen and (max-width: 768px) {
+    main {
+        flex-direction: column;
+    }
+}
