@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">  
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Lab</title> <!-- Page title placeholder -->
+    <!--<link rel="stylesheet" href="basicjs.css">-->
+</head>
+<body>
+    <h1>Hello, JavaScript!</h1>
+
+    <script>
+        let name = "Alice";  // Variable declaration
+        let age = 30;        // Another variable declaration
+        var city = "New York"; // Using var for variable declaration
+        console.log("Name: " + name); // Logging name to console
+        console.log("Age: " + age);   // Logging age to console
+        console.log("City: " + city); // Logging city to console
+
+        if (age > 18) {  // Conditional statement
+            console.log(name + " is an adult.");
+        } else {
+            console.log(name + " is a minor.");
+        }
+
+        function squareNumber(number) {  // Function definition
+            return number * number;
+        }
+        let result = squareNumber(4);
+        console.log("Square of 4 is: " + result); // Logging function result
+    </script>
+
+</body>
+
+</html>
