@@ -71,10 +71,13 @@ class Settings {
 CalculatorModule.add(5);
 CalculatorModule.subtract(10);
 
-const observer1 = new Observer(observer1);
-const observer2 = new Observer(observer2);
+const observer1 = new Observer("observer1");
+const observer2 = new Observer("observer2");
+const observer3 = new Observer("observer3");
 
-const subject1 = new Subject(observer1);
-const subject2 = new Subject(observer2);
-subject1.notify();
-subject2.notify();
+const subject = new Subject();
+subject.subscribe(observer1);
+subject.subscribe(observer2);
+subject.subscribe(observer3);
+
+subject.notify();
