@@ -337,3 +337,50 @@ footer {
         display: flex; /* Show the nav links when active */
     }
 }
+
+/* Responsive grid for projects */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+    align-items: start;
+}
+
+/* Keep image area consistent and crop overflow if needed */
+.image-container {
+    width: 100%;
+    aspect-ratio: 16/9;         /* preferred modern browsers */
+    overflow: hidden;
+    border-radius: 6px;
+    background: #f4f4f4;
+}
+
+/* Fallback for browsers that don't support aspect-ratio */
+@supports not (aspect-ratio: 1/1) {
+    .image-container {
+        position: relative;
+        padding-top: 56.25%; /* 16:9 ratio */
+    }
+    .image-container img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+/* Make the image fill the container and keep its cover behavior */
+.project-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;   /* use 'contain' to avoid cropping if preferred */
+    display: block;
+}
+
+/* Extra safety for other contexts */
+.project-item img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
