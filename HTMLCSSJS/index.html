@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Personal portfolio of [Your Name], showcasing projects and skills.">
+    <title>[Your Name] - Personal Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <nav role="navigation">
+            <!-- Add a button for the hamburger menu -->
+            <button class="hamburger-menu" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul id="nav-links">
+                <li><a href="#about-me">About Me</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="about-me">
+            <h1>About Me</h1>
+            <p>Welcome to my portfolio! I am a passionate developer specializing in creating dynamic and user-friendly web applications.</p>
+        </section>
+
+        <section id="projects">
+            <h2>My Projects</h2>
+            <!-- Add filter buttons -->
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="web-app">Web Apps</button>
+                <button class="filter-btn" data-filter="design">Design</button>
+            </div>
+            
+            <!-- Add data-category attributes to each project -->
+            <div class="project-grid">
+                <article class="project-item" data-category="web-app">
+                    <h3>Project One: E-commerce Platform</h3>
+                    <img src="images/project-one.jpg" alt="Homepage of the E-commerce Platform" class="project-image">
+                    <p>A fully-featured e-commerce site built with modern web technologies.</p>
+                </article>
+
+                <article class="project-item" data-category="design">
+                    <h3>Project Two: Branding Redesign</h3>
+                    <img src="images/project-two.jpg" alt="A new logo and brand guide for a client" class="project-image">
+                    <p>A complete branding overhaul for a local business, focusing on a modern and clean aesthetic.</p>
+                </article>
+
+                <article class="project-item" data-category="web-app">
+                    <h3>Project Three: Task Management App</h3>
+                    <img src="images/project-two.jpg" alt="Dashboard of the Task Management App" class="project-image">
+                    <p>A user-friendly application to help teams organize their work effectively.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>My Skills</h2>
+            <ul>
+                <li>HTML5 & CSS3</li>
+                <li>JavaScript (ES6+)</li>
+                <li>Web Accessibility</li>
+            </ul>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="user_name" required>
+                    <small class="error-message"></small>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="user_email" required>
+                    <small class="error-message"></small>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="user_message" rows="5" required></textarea>
+                    <small class="error-message"></small>
+                </div>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 [Your Name]. All rights reserved.</p>
+    </footer>
+
+    <!-- Add the lightbox modal structure (hidden by default) -->
+    <div id="lightbox-modal" class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightbox-image">
+    </div>
+
+    <!-- Step 2: Link the JavaScript file at the end of the body -->
+    <script src="script.js"></script>
+</body>
+</html>
