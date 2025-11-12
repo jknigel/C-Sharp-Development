@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryMgmt", "LibraryMgmt\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DOM", "DOM\DOM.csproj", "{99AA5391-78DC-477B-AD8B-F2B83C3A23DF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecipeManagerApp", "RecipeManagerApp\RecipeManagerApp.csproj", "{99AA5391-78DC-477B-AD8B-F2B83C3A23DX}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
