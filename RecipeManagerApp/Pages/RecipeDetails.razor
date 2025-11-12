@@ -1,0 +1,35 @@
+@page "/recipe/{Id:int}"
+@inject Services.RecipeService MyRecipeService
+
+@* --- THIS IS THE CRITICAL FIX --- *@
+@* We check if the 'recipe' object is NOT null before we try to use it. *@
+@if (recipe != null)
+{
+    <h1>@recipe.Name</h1>
+    <p>@recipe.Description</p>
+    
+    <a href="/">Back to list</a>
+}
+else
+{
+    @* If the recipe is null, we display a helpful message instead of crashing. *@
+    <h1>Recipe Not Found</h1>
+    <p>Sorry, we couldn't find a recipe with that ID.</p>
+    <a href="/">Back to list</a>
+}
+@* -------------------------------- *@
+
+
+@code {
+    [Parameter]
+    public int Id { get; set; }
+
+    private Recipe? recipe; // Use the '?' to indicate that this can be null.
+
+    protected override void OnInitialized()
+    {
+        // Use the new, safer method to find the recipe.
+        // If no recipe is found, this will correctly assign 'null' to our recipe variable.
+        recipe = MyRecipeService.GetRecipeById(Id);
+    }
+}

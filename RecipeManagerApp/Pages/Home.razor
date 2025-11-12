@@ -1,25 +1,52 @@
 ﻿@page "/"
+@inject Services.RecipeService MyRecipeService
 
-<PageTitle>Recipe Manager App</PageTitle>
+<h1>My Recipes</h1>
 
-<h1>List of Recipes</h1>
-
-<ol>
-    @foreach (var recipe in Recipes) {
-        <li>Name: @recipe.Name - Description: @recipe.Description</li>
-        <a href = "/recipe/@recipe.Id">View Details</a>
-    }
-</ol>
-<a href="/addrecipe" class="btn btn-primary">Add New Recipe</a>
+@if (Recipes.Any())
+{
+    <div class="recipe-list">
+        @foreach (var recipe in Recipes)
+        {
+            @* This is a standard link, but the href is dynamically created. *@
+            @* For the first recipe, this will render as: <a href="/recipe/1"> ... *@
+            <a href="/recipe/@recipe.Id" class="recipe-card">
+                <h3>@recipe.Name</h3>
+                <p>@recipe.Description</p>
+            </a>
+        }
+    </div>
+}
+else
+{
+    <p>No recipes found.</p>
+}
+<a href="/addrecipe" class="btn btn-primary mb-3">Add New Recipe</a>
 
 @code {
-    private List<Recipe> Recipes = new() {
-        new Recipe { Id = 1, Name = "Sashimi Platter", Description = "A Japanese cusine loved by people"},
-        new Recipe { Id = 2, Name = "Wagyu Beef", Description = "Delicious beef exclusively from Japan"}
-    };
+    private List<Recipe> Recipes = new();
 
-    private Recipe selectedRecipe;
-    private void SelectRecipe(Recipe recipe) {
-        selectedRecipe = recipe;
+    protected override void OnInitialized()
+    {
+        Recipes = MyRecipeService.GetAllRecipes();
     }
 }
+
+<style>
+    .recipe-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1rem;
+    }
+    .recipe-card {
+        border: 1px solid #ddd;
+        padding: 1rem;
+        border-radius: 8px;
+        text-decoration: none;
+        color: inherit;
+        transition: box-shadow 0.2s ease;
+    }
+    .recipe-card:hover {
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+</style>

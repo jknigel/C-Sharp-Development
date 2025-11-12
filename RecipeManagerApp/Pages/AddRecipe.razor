@@ -1,5 +1,6 @@
 @page "/addrecipe"
 @inject NavigationManager NavManager
+@inject Services.RecipeService MyRecipeService
 
 <h1>Add New Recipe</h1>
 <input @bind="recipeName" placeholder="Recipe Name"/><br /><br />
@@ -13,6 +14,11 @@
     public string recipeDescription = string.Empty;
 
     private void SaveRecipe() {
+        var newRecipe = new Recipe {
+            Name = recipeName,
+            Description = recipeDescription
+        };
+        MyRecipeService.AddRecipe(newRecipe);
         NavManager.NavigateTo("/");
     }
 }
