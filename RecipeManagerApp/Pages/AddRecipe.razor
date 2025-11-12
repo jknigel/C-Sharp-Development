@@ -1,3 +1,18 @@
 @page "/addrecipe"
+@inject NavigationManager NavManager
 
 <h1>Add New Recipe</h1>
+<input @bind="recipeName" placeholder="Recipe Name"/><br /><br />
+<textarea @bind ="recipeDescription" placeholder="Recipe Description"/><br />
+<button @onclick="SaveRecipe">Add Recipe</button>
+
+@code {
+    [Parameter]
+    public int recipeId { get; set; }
+    public string recipeName = string.Empty;
+    public string recipeDescription = string.Empty;
+
+    private void SaveRecipe() {
+        NavManager.NavigateTo("/");
+    }
+}
