@@ -1,0 +1,25 @@
+﻿@page "/"
+
+<PageTitle>Recipe Manager App</PageTitle>
+
+<h1>List of Recipes</h1>
+
+<ol>
+    @foreach (var recipe in Recipes) {
+        <li>Name: @recipe.Name - Description: @recipe.Description</li>
+        <a href = "/recipe/@recipe.Id">View Details</a>
+    }
+</ol>
+<a href="/addrecipe" class="btn btn-primary">Go to Counter</a>
+
+@code {
+    private List<Recipe> Recipes = new() {
+        new Recipe { Id = 1, Name = "Sashimi Platter", Description = "A Japanese cusine loved by people"},
+        new Recipe { Id = 2, Name = "Wagyu Beef", Description = "Delicious beef exclusively from Japan"}
+    };
+
+    private Recipe selectedRecipe;
+    private void SelectRecipe(Recipe recipe) {
+        selectedRecipe = recipe;
+    }
+}
